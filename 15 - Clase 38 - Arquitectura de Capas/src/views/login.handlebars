@@ -1,0 +1,28 @@
+<h1>Logueate</h1>
+<form
+  style="display: flex; flex-direction: column; padding: 10px; gap: 10px;"
+  id="loginForm"
+>
+  <div>
+    <label>Correo electrónico</label>
+    <input name="email" />
+  </div>
+
+  <div>
+    <label>Contraseña</label>
+    <input type="password" name="password" />
+  </div>
+
+  <div>
+    <input type="submit" />
+  </div>
+</form>
+
+<p>¿No estás logueado? <a href="/register">Regístrate :)</a></p>
+
+<p>Tambien puedes loguearte con:
+  <a href="/sessions/github"><button>Git-Hub</button></a></p>
+<p>Tambien puedes loguearte con:
+  <a href="/sessions/google"><button>Google</button></a></p>
+
+<script src="/js/login.js"></script>

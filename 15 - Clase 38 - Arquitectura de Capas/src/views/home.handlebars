@@ -1,0 +1,61 @@
+
+<div>
+<header>
+  <div class="p-2 bg-light shadow rounded m-3 d-flex align-items-center w-75 mx-auto">
+    <p class="m-0 flex-grow-1" style="font-size: large; text-align: center;">Welcome {{this.name}}</p>
+    <a href="/logout" class="btn btn-info">LOG OUT</a>
+  </div>
+</header>
+
+<div class="container mt-3">
+
+  <h1 class="text-primary text-center">Ingrese Producto</h1>
+  <br />
+  <form id="productForm">
+    <div class="form-group">
+      <label><b>Titulo</b></label>
+      <input class="form-control" type="text" name="title"/>
+    </div>
+
+    <div class="form-group">
+      <label><b>Precio</b></label>
+      <input class="form-control" type="number" name="price"/>
+    </div>
+
+    <div class="form-group">
+      <label><b>Imagen</b></label>
+      <input class="form-control" type="file" name="image"/>
+    </div>
+
+    <div class="form-group">
+      <label><b>Descripcion</b></label>
+      <textarea
+        class="form-control"
+        name="description"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label><b>Codigo</b></label>
+      <input class="form-control" name="code"/>
+    </div>
+
+    <div class="form-group">
+      <label><b>Stock</b></label>
+      <input class="form-control" type="number" name="stock"/>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <input type="submit">
+    </div>
+  </form>
+
+  <br /><br />
+  <a href="./productos"><button class="btn btn-danger">Ir a lista de productos</button></a>
+  <br /><br />
+  <a href="./cart"><button class="btn btn-danger">Carrito</button></a>
+</div>
+</div>
+<script src="/js/productCreator.js"></script>
