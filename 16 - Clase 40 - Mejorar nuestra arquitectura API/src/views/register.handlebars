@@ -1,0 +1,60 @@
+<h1>Regístrate</h1>
+
+<form
+  style="display: flex; flex-direction: column; padding: 10px; gap: 10px;"
+  id="registerForm"
+>
+  <div>
+    <label>Nombre</label>
+    <input name="first_name" />
+  </div>
+
+  <div>
+    <label>Apellido</label>
+    <input name="last_name" />
+  </div>
+
+  <!-- <div>
+        <label>Ingrese su edad</label>
+        <input type="number" name="age"/>
+      </div> -->
+
+  <div>
+    <label>Correo electrónico</label>
+    <input name="email" placeholder="correo@correo.com" />
+  </div>
+
+  <!-- <div>
+        <label>Ingrese su numero telefonico</label>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Ej: +5491231234567"
+          pattern="[+][0-9]{8,20}"
+          required
+        />
+      </div> -->
+
+  <!-- <div>
+        <label>Ingrese su dirección</label>
+        <input type="text" name="address" />
+      </div> -->
+
+  <div>
+    <label>Imagen de perfil</label>
+    <input type="file" name="avatar" />
+  </div>
+
+  <div>
+    <label>Contraseña</label>
+    <input type="password" name="password" minlength="8" required />
+  </div>
+
+  <div>
+    <input type="submit" />
+  </div>
+</form>
+
+<p>¿Ya estás registrado?<a href="/">Logueate :)</a></p>
+
+<script src="/js/register.js"></script>
