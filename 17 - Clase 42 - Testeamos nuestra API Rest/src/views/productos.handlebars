@@ -1,0 +1,29 @@
+<h2 class="text-primary m-3 me-auto text-center">Vista de Productos</h2>
+    {{#if products}}
+        <div class="table-responsive p-3">
+            <table class="table table-dark">
+                <tr>
+                    <th class="text-center"><b>Codigo</b></th> 
+                    <th class="text-center"><b>Titulo</b></th> 
+                    <th class="text-center">Thumbnail</b></th> 
+                    <th class="text-center"><b>descripcion</b></th> 
+                    <th class="text-center"><b>Precio</b></th>
+                    <th class="text-center"><b>Stock</b></th> 
+                </tr>
+                    {{#each products}}
+                <tr> 
+                    <td class="text-center text-light">{{this.code}}</td>
+                    <td class="text-center text-light">{{this.title}}</td>
+                    <td class="text-center text-light">{{ this.image}}</td>
+                    <td class="text-center text-light">{{this.description}}</td>
+                    <td class="text-center text-light">$ {{this.price}}</td>
+                    <td class="text-center text-light">{{this.stock}}</td>    
+
+                </tr>
+               {{/each}}
+            </table>
+        </div>
+    {{else}}
+        <h3 class="alert alert-warning m-5">No se encontraron productos</h1>
+    {{/if}}
+    <a href="./home"><button class="btn btn-danger m-5">Volver</button></a>
