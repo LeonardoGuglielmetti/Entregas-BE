@@ -1,0 +1,25 @@
+<div
+  style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
+>
+  <h1>Bienvenid@, {{user.name}}</h1>
+  <br />
+  <p><b>Rol:</b> {{user.role}}</p>
+  <br />
+  <img src={{user.avatar}} />
+  <br>
+  {{#if events}}
+    <h3>Hostorial de actividades</h3>
+    <ul>
+        {{#each events}}
+        <li>
+            <div>
+                <p>{{this.event}}</p>
+                <p>{{this.description}}</p>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+  {{else}}
+    <h3>Este usuario no registra actividades</h3>
+  {{/if}}
+</div>

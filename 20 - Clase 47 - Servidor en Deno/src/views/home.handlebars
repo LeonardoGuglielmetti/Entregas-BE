@@ -1,0 +1,69 @@
+<div>
+  <header>
+    <div
+      class="p-2 bg-light shadow rounded m-3 d-flex align-items-center w-75 mx-auto"
+    >
+      <p
+        class="m-0 flex-grow-1"
+        style="font-size: large; text-align: center;"
+      >Welcome {{user.name}}</p>
+      <div>
+      <a href="./cart"><button class="btn btn-danger">Carrito</button></a>
+      </div>
+      <a href="/logout" class="btn btn-info">LOG OUT</a>
+      
+    </div>
+  </header>
+
+  <h2 class="text-primary m-3 me-auto text-center">Vista de Productos</h2>
+    {{#if products}}
+
+    <h1>Ultimos productos agregados</h1>
+        <div class="table-responsive p-3"   style="display: flex">
+            <table class="table table-dark">
+                <tr>
+                    <th class="text-center"><b>Producto</b></th> 
+                    <th class="text-center"><b>Thumbnail</b></th> 
+                    <th class="text-center"><b>descripcion</b></th> 
+                    <th class="text-center"><b>Precio</b></th>
+                    <th class="text-center"><b>Stock</b></th> 
+                    <th class="text-center"><b>Agregar al carrito</b></th>
+                </tr>
+                    {{#each products}}
+                <tr> 
+                    <td class="text-center text-light">{{this.title}}</td>
+                    <td class="text-center text-light"><img style="max-width: 10%; height: 10%;" src={{this.image}}></td>
+                    <td class="text-center text-light">{{this.description}}</td>
+                    <td class="text-center text-light">$ {{this.price}}</td>
+                    <td class="text-center text-light">{{this.stock}}</td>
+                    {{#if this.inCart}}
+                      <th><button disabled>Ya se encuentra agregado en el carrito</button></th>
+                    {{else}}
+                    {{#if this.inLibrary}}
+                      <th><button disabled>Ya se encuentra agregado en la biblioteca</button></th>
+                    {{else}}
+                      <th><a href="http://localhost:8080/carts/product/{{this._id}}"><button>Agregar al carrito</button></a></th>
+                    {{/if}}
+                    {{/if}}
+                </tr>
+               {{/each}}
+            </table>
+        </div>
+        <div>
+          {{#if paginationData.hasPrevPage}}
+          <a href="http://localhost:8080?page={{paginationData.prevPage}}"><button>Prev</button></a>
+          {{/if}}
+          <p>{{paginationData.page}}</p>
+          {{#if paginationData.hasNextPage}}
+          <a href="http://localhost:8080?page={{paginationData.nextPage}}"><button>Next</button></a>
+          {{/if}}
+        </div>
+    {{else}}
+        <h3 class="alert alert-warning m-5">No se encontraron productos</h1>
+    {{/if}}
+
+ 
+  <br /><br />
+  
+</div>
+<script src="/js/productCreator.js"></script>

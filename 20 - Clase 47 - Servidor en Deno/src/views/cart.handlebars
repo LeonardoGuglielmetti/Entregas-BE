@@ -1,0 +1,17 @@
+<div>
+  {{#if products}}
+    <h1>Hola {{name}}, este es tu carrito</h1>
+    {{#each products}}
+      <div>
+        <p>{{this.title}}</p>
+        <p>{{this.price}}</p>
+      </div>
+    {{/each}}
+    <button id="purchaseButton">Agregar a la biblioteca</button>
+    <a href="/home">Seguir comprando</a>
+  {{else}}
+    <h1>AUN NO AGREGASTE PRODUCTOS A TU CARRITO</h1>
+    <a href="/home">Comenzar a comprar!</a>
+  {{/if}}
+</div>
+<script src="/js/cart.js"></script>
